@@ -13,8 +13,6 @@ import {
 import isUnicodeSupported from "is-unicode-supported";
 import color from "picocolors";
 import { cursor, erase } from "sisteransi";
-export const one = 1;
-export const two = 2;
 
 export { isCancel } from "@clack/core";
 
