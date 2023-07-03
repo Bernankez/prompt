@@ -45,7 +45,7 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "simple-git-hooks",
+    "prepare": "simple-git-hooks",
     "prepublishOnly": "pnpm build",
     "build": "unbuild",
     "dev": "unbuild --stub",
