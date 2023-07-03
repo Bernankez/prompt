@@ -1,18 +1,36 @@
-<p align="center">
-  <strong>📦 TSTemplate</strong><br><br>
-  Starter template for TypesScript library with unbuild<br>
-  <samp>extends <a href="https://github.com/antfu/starter-ts" target="_blank">antfu/starter-ts</a></samp>
-</p>
+# @bernankez/prompt
 
-### Getting Started
+[![npm](https://img.shields.io/npm/v/@bernankez/prompt?color=green&label=npm)](https://www.npmjs.com/package/@bernankez/prompt)
 
-- [ ] Change the `name`, `description`, `author`, `homepage`, `repository`, `bugs`, `keywords` in `package.json`
-- [ ] Change the author in `LICENSE`
-- [ ] Set your Actions Secrets via GitHub
-- [ ] Have fun :)
+Forked from [@clack/prompts](https://github.com/natemoo-re/clack/tree/main/packages/prompts)
 
-### Check Also
-
-- [VuePureTemplate](https://github.com/Bernankez/VuePureTemplate) - Simple starter template for Vue3
-- [vscode-settings](https://github.com/Bernankez/vscode-settings) - My VSCode Settings
-- [eslint-config](https://github.com/Bernankez/eslint-config) - My ESLint Config
+#### Changes in this fork
+- Improve type hints.
+- Add `format` option.
+```ts
+const options = {
+  format(value: Value) {
+    return formatValue(value);
+  }
+};
+```
+- Call `onCancel` callback on every prompt if `onCancel` is registered.
+```ts
+onCancel((value) => {
+  if (isCancel(value)) {
+    cancel("Operation canceled");
+    process.exit(0);
+  }
+});
+```
+- Exclude `symbol` from return type. If `onCancel` is not registered, you need to handle `isCancel` in `format` for every prompt. Or else, program will exit.
+```ts
+const options = {
+  format(value: Value) {
+    if (isCancel(value)) {
+      // ...
+    }
+    return value;
+  }
+};
+```

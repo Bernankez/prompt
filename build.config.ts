@@ -8,6 +8,7 @@ export default defineBuildConfig({
   clean: true,
   rollup: {
     emitCJS: true,
+    inlineDependencies: true,
     esbuild: {
       minify: true,
     },
