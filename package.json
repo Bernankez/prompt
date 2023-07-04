@@ -51,7 +51,7 @@
     "dev": "unbuild --stub",
     "release": "bumpp && pnpm publish",
     "start": "tsx src/index.ts",
-    "watch": "tsx watch src/index.ts",
+    "watch": "tsx --watch src/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
