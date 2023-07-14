@@ -35,3 +35,9 @@ const options = {
   }
 };
 ```
+
+### Install
+
+```sh
+$ pnpm add @bernankez/prompt
+```
