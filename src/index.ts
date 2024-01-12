@@ -643,31 +643,31 @@ export interface LogMessageOptions {
   symbol?: string;
 }
 export const log = {
-  message: (message = "", { symbol = color.gray(S_BAR) }: LogMessageOptions = {}) => {
+  message: (message: string | number = "", { symbol = color.gray(S_BAR) }: LogMessageOptions = {}) => {
     const parts = [`${color.gray(S_BAR)}`];
     if (message) {
-      const [firstLine, ...lines] = message.split("\n");
+      const [firstLine, ...lines] = message.toString().split("\n");
       parts.push(`${symbol}  ${firstLine}`, ...lines.map(ln => `${color.gray(S_BAR)}  ${ln}`));
     }
     process.stdout.write(`${parts.join("\n")}\n`);
   },
-  info: (message: string) => {
+  info: (message: string | number) => {
     log.message(message, { symbol: color.blue(S_INFO) });
   },
-  success: (message: string) => {
+  success: (message: string | number) => {
     log.message(message, { symbol: color.green(S_SUCCESS) });
   },
-  step: (message: string) => {
+  step: (message: string | number) => {
     log.message(message, { symbol: color.green(S_STEP_SUBMIT) });
   },
-  warn: (message: string) => {
+  warn: (message: string | number) => {
     log.message(message, { symbol: color.yellow(S_WARN) });
   },
   /** alias for `log.warn()`. */
-  warning: (message: string) => {
+  warning: (message: string | number) => {
     log.warn(message);
   },
-  error: (message: string) => {
+  error: (message: string | number) => {
     log.message(message, { symbol: color.red(S_ERROR) });
   },
 };
