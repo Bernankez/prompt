@@ -5,7 +5,13 @@
 
 Forked from [@clack/prompts](https://github.com/natemoo-re/clack/tree/main/packages/prompts)
 
-#### Changes in this fork
+### Install
+
+```sh
+$ pnpm add @bernankez/prompt
+```
+
+### Changes in this fork
 - Improve type hints.
 - Add `format` option.
 ```ts
@@ -35,9 +41,7 @@ const options = {
   }
 };
 ```
-
-### Install
-
-```sh
-$ pnpm add @bernankez/prompt
+- Enhanced log parameter types
+```
+log.message(619); // message can be a number
 ```
