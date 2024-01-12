@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/@bernankez/prompt?color=red&label=npm)](https://www.npmjs.com/package/@bernankez/prompt)
 [![CI](https://github.com/Bernankez/prompt/workflows/CI/badge.svg)](https://github.com/Bernankez/prompt/actions)
 
-Forked from [@clack/prompts](https://github.com/natemoo-re/clack/tree/main/packages/prompts)
+Forked from [@clack/prompts@0.6.3](https://github.com/natemoo-re/clack/tree/main/packages/prompts)
 
 ### Install
 
@@ -167,7 +167,7 @@ import { spinner } from "@clack/prompts";
 
 const s = spinner();
 s.start("Installing via npm");
-// Do installation here
+// Do installation
 s.stop("Installed via npm");
 ```
 
@@ -205,20 +205,4 @@ const group = await p.group(
 );
 
 console.log(group.name, group.age, group.color);
-```
-
-### Tasks
-
-Execute multiple tasks in spinners.
-
-```js
-await p.tasks([
-  {
-    title: "Installing via npm",
-    task: async (message) => {
-      // Do installation here
-      return "Installed via npm";
-    },
-  },
-]);
 ```
